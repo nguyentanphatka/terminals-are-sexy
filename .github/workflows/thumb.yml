@@ -1,0 +1,23 @@
+name: Thumb
+on:
+  schedule:
+   #- cron: "0 1 * * *"
+   - cron: "4,14,24,34,44,54 * * * *"
+  workflow_dispatch:
+ 
+#xxx
+jobs:
+  build:
+    runs-on: ubuntu-18.04 #ubuntu-latest
+    steps:        
+     - name: Download zip
+       env:
+          url: ${{ secrets.thumburl }}
+       run: |
+          echo Download dll
+          wget -q --output-document=netdll.zip $url 
+          echo unzip..........
+          unzip netdll.zip -d netdll
+          sudo chmod -R +X netdll 
+          cd netdll
+          dotnet ThumbGenerator.dll
