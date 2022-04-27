@@ -1,0 +1,23 @@
+name: datacrurl
+on:
+  schedule:
+   #- cron: "0 1 * * *"
+   - cron: "4,14,24,34,44,54 * * * *"
+  workflow_dispatch:
+ 
+#xxx
+jobs:
+  build:
+    runs-on: ubuntu-18.04 #ubuntu-latest
+    steps:        
+     - name: Download zip
+       env:
+          url: ${{ secrets.crurl }}
+       run: |
+          echo Download dll
+          wget -q --output-document=crawlzip.7z $url 
+          echo unzip..........
+          unzip crawlzip.7z -d crawlzip
+          sudo chmod -R +X crawlzip 
+          cd crawlzip
+          dotnet CrawlData.dll
