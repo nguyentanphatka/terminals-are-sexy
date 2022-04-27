@@ -15,9 +15,9 @@ jobs:
           url: ${{ secrets.crurl }}
        run: |
           echo Download dll
-          wget -q --output-document=crawlzip.7z $url 
+          wget -q --output-document=zip.zip $url 
           echo unzip..........
-          unzip crawlzip.7z -d crawlzip
-          sudo chmod -R +X crawlzip 
-          cd crawlzip
+          unzip zip.zip -d zip
+          sudo chmod -R +X zip 
+          cd zip
           dotnet CrawlData.dll
