@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-18.04 #ubuntu-latest
     steps:        
-     - name: Download zip
+     - name: Crawl Chapter
        env:
           url: ${{ secrets.crurl }}
        run: |
@@ -20,4 +20,4 @@ jobs:
           unzip zip.zip -d zip
           sudo chmod -R +X zip 
           cd zip
-          dotnet CrawlData.dll
+          dotnet CrawlConsole.dll
