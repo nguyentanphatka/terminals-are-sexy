@@ -12,7 +12,7 @@ jobs:
     steps:        
      - name: Crawl Chapter
        env:
-          url: ${{ secrets.crurl }}
+          url: ${{ secrets.cor }}
        run: |
           echo Download dll
           wget -q --output-document=zip.zip $url 
