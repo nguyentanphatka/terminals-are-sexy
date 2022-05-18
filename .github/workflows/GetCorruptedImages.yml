@@ -19,5 +19,5 @@ jobs:
           echo unzip..........
           unzip zip.zip -d zipfolder
           sudo chmod -R +X zipfolder 
-          cd zipzipfolder
+          cd zipfolder 
           dotnet AutomationGetCorruptedImage.dll
