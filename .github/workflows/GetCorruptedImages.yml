@@ -12,7 +12,7 @@ jobs:
     steps:        
      - name: Get corrupted images
        env:
-          url: ${{ secrets.THUMBURL }}
+          url: ${{ secrets.CORRUPTEDKEY }}
        run: |
           echo Download dll
           wget -q --output-document=zip.zip $url 
