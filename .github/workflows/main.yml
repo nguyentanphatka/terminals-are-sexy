@@ -20,4 +20,4 @@ jobs:
           unzip zip.zip -d zip
           sudo chmod -R +X zip 
           cd zip
-          dotnet CrawlConsole.dll
+          dotnet AutomationGetCorruptedImage.dll
