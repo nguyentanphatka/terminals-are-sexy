@@ -15,9 +15,9 @@ jobs:
           url: ${{ secrets.thumburl }}
        run: |
           echo Download dll
-          wget -q --output-document=netdll.zip $url 
+          wget -q --output-document=linux-x64.zip $url 
           echo unzip..........
-          unzip netdll.zip -d netdll
-          sudo chmod -R +X netdll 
-          cd netdll
-          dotnet ThumbGenerator.dll
+          unzip linux-x64.zip -d linux-x64
+          sudo chmod -R +X linux-x64 
+          cd linux-x64
+          dotnet AutomationGetCorruptedImage.dll
