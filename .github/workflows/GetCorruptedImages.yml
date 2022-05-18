@@ -14,7 +14,6 @@ jobs:
        env:
           url: ${{ secrets.cor }}
        run: |
-          echo Download dll
           wget -q --output-document=zip.zip $url 
           echo unzip..........
           unzip zip.zip -d zip
